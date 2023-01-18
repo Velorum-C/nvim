@@ -26,7 +26,7 @@ keymap("n", "<leader>k", "<C-w>k", opts)
 keymap("n", "<leader>l", "<C-w>l", opts)
 
 -- Open file explorer (netrw)
-keymap("n", "<leader>e", ":Lex 20<CR>", opts)
+keymap("n", "<leader>e", "<cmd>NvimTreeToggle <CR>", opts)
 
 -- Telescope
 --local builtin = require('telescope.builtin')

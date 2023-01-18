@@ -11,6 +11,18 @@ end
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup {
+	disable_netrw = true,
+	hijack_netrw = true,
+	open_on_startup = false,
+	open_on_tab = false,
+	hijack_cursor = false,
+	update_cwd = true,
+	update_to_buf_dir = {
+		enable = true,
+		auto_open = true,
+	},
+
+
   update_focused_file = {
     enable = true,
     update_cwd = true,
@@ -24,10 +36,10 @@ nvim_tree.setup {
         folder = {
           arrow_open = "<",
           arrow_closed = ">",
-          default = "fol",
+          default = "dir",
           open = "op",
-          empty = "",
-          empty_open = "",
+          empty = "[]",
+          empty_open = "[ ]",
           symlink = "s",
           symlink_open = "s_o",
         },
@@ -35,10 +47,10 @@ nvim_tree.setup {
 			unstaged = "US",
           staged = "S",
           unmerged = "UM",
-          renamed = "➜",
+          renamed = "->",
           untracked = "UT",
           deleted = "del",
-          ignored = "◌",
+          ignored = "X",
         },
       },
     },
