@@ -1,0 +1,11 @@
+local status_ok, _ = pcall(require, "lspconfig")
+if not status_ok then
+  return
+end
+
+local lsp = require('lsp-zero')
+lsp.preset('recommended')
+
+require "user.lsp.mason"
+require("user.lsp.handlers").setup()
+require "user.lsp.null-ls"
