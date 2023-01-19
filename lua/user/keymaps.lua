@@ -69,6 +69,9 @@ keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 -- Change colorscheme
 keymap("n", "<leader>c", ":colorscheme ", opts)
 
+-- Open terminals
+keymap("n", "<C-p>", ":lua _PYTHON_TOGGLE()", opts)
+
 -- Insert --
 -- Press jk fast to exit insert mode 
 keymap("i", "jk", "<ESC>", opts)

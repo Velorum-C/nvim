@@ -11,18 +11,6 @@ end
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup {
-	disable_netrw = true,
-	hijack_netrw = true,
-	open_on_startup = false,
-	open_on_tab = false,
-	hijack_cursor = false,
-	update_cwd = true,
-	update_to_buf_dir = {
-		enable = true,
-		auto_open = true,
-	},
-
-
   update_focused_file = {
     enable = true,
     update_cwd = true,
@@ -31,26 +19,26 @@ nvim_tree.setup {
     root_folder_modifier = ":t",
     icons = {
       glyphs = {
-        default = "d",
-        symlink = "s",
+        default = "",
+        symlink = "",
         folder = {
-          arrow_open = "<",
-          arrow_closed = ">",
-          default = "dir",
-          open = "op",
-          empty = "[]",
-          empty_open = "[ ]",
-          symlink = "s",
-          symlink_open = "s_o",
+          arrow_open = "",
+          arrow_closed = "",
+          default = "",
+          open = "",
+          empty = "",
+          empty_open = "",
+          symlink = "",
+          symlink_open = "",
         },
         git = {
-			unstaged = "US",
+          unstaged = "",
           staged = "S",
-          unmerged = "UM",
-          renamed = "->",
-          untracked = "UT",
-          deleted = "del",
-          ignored = "X",
+          unmerged = "",
+          renamed = "➜",
+          untracked = "U",
+          deleted = "",
+          ignored = "◌",
         },
       },
     },
@@ -59,10 +47,10 @@ nvim_tree.setup {
     enable = true,
     show_on_dirs = true,
     icons = {
-      hint = "H",
-      info = "I",
-      warning = "?",
-      error = "!",
+      hint = "",
+      info = "",
+      warning = "",
+      error = "",
     },
   },
   view = {
