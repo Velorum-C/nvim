@@ -29,11 +29,7 @@ keymap("n", "<leader>l", "<C-w>l", opts)
 keymap("n", "<leader>e", "<cmd>NvimTreeToggle <CR>", opts)
 
 -- Telescope
---local builtin = require('telescope.builtin')
---vim.keymap.set('n', '<leader>f', builtin.find_files, {})
---vim.keymap.set('n', '<leader>pg', builtin.git_files, {})
---vim.keymap.set('n', '<leader>g', builtin.grep_string, {})
-
+keymap('n', '<leader>pg', "<cmd>Telescope git_files <CR>", opts)
 keymap("n", "<leader>f", "<cmd>lua require 'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({previewer = false})) <CR>", opts)
 keymap("n", "<leader>g", "<cmd>Telescope live_grep <CR>", opts)
 
