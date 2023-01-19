@@ -66,11 +66,11 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
+-- Find and replace
+keymap("n", "<leader>r", ":%s/", opts)
+
 -- Change colorscheme
 keymap("n", "<leader>c", ":colorscheme ", opts)
-
--- Open terminals
-keymap("n", "<C-p>", ":lua _PYTHON_TOGGLE()", opts)
 
 -- Insert --
 -- Press jk fast to exit insert mode 
