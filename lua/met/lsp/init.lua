@@ -10,3 +10,4 @@ lsp.automatic_installation = true
 lsp.setup()
 
 require("met.lsp.handlers").setup()
+require("met.lsp.null-ls")

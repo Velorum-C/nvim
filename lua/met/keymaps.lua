@@ -31,10 +31,12 @@ keymap("n", "<leader>b", "<cmd>Bdelete <CR>", opts)
 keymap("n", "<leader>e", "<cmd>NvimTreeToggle <CR>", opts)
 
 -- Telescope
-keymap('n', '<leader>pg', "<cmd>Telescope git_files <CR>", opts)
+keymap('n', '<leader>i', "<cmd>Telescope git_files <CR>", opts)
 keymap("n", "<leader>f", "<cmd>lua require 'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({previewer = false})) <CR>", opts)
 keymap("n", "<leader>g", "<cmd>Telescope live_grep <CR>", opts)
 
+-- Format with null-ls 
+keymap("n", "<leader>p", "<cmd>lua vim.lsp.buf.format() <CR>", opts)
 
 -- Split windows
 keymap("n", "<leader>v", "<C-w>v", opts)
