@@ -194,4 +194,3 @@ local opts = {
   },
 }
 
-return opts

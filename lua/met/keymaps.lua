@@ -24,6 +24,8 @@ keymap("n", "<leader>h", "<C-w>h", opts)
 keymap("n", "<leader>j", "<C-w>j", opts)
 keymap("n", "<leader>k", "<C-w>k", opts)
 keymap("n", "<leader>l", "<C-w>l", opts)
+keymap("n", "<leader>b", "<cmd>Bdelete <CR>", opts)
+
 
 -- Open file explorer (netrw)
 keymap("n", "<leader>e", "<cmd>NvimTreeToggle <CR>", opts)
