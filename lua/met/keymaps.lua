@@ -42,7 +42,7 @@ keymap("n", "<leader>s", "<C-w>s", opts)
 
 -- Closing windows
 keymap("n", "<leader>q", ":q <CR>", opts)
-keymap("n", "<leader>w", ":wq <CR>", opts)
+keymap("n", "<leader>w", ":w <CR>", opts)
 
 -- System clipboard
 vim.keymap.set("n", "<leader>y", "\"+y")

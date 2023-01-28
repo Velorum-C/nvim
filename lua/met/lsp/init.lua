@@ -1,18 +1,12 @@
-local servers = {
-	"sumneko_lua",
-	"cssls",
-	"html",
-	"tsserver",
-	"pyright",
-	"bashls",
-	"jsonls",
-}
+-- Learn the keybindings, see :help lsp-zero-keybindings
+-- Learn to configure LSP servers, see :help lsp-zero-api-showcase
+local lsp = require('lsp-zero')
+lsp.preset('recommended')
 
-local lsp = require("lsp-zero")
+-- (Optional) Configure lua language server for neovim
+lsp.nvim_workspace()
 
-lsp.preset("recommended")
-lsp.ensure_installed(servers)
 lsp.automatic_installation = true
-
 lsp.setup()
+
 require("met.lsp.handlers").setup()
