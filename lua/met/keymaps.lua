@@ -36,7 +36,7 @@ keymap("n", "<leader>f", "<cmd>lua require 'telescope.builtin'.find_files(requir
 keymap("n", "<leader>g", "<cmd>Telescope live_grep <CR>", opts)
 
 -- Format with null-ls 
-keymap("n", "<leader>p", "<cmd>lua vim.lsp.buf.format() <CR>", opts)
+keymap("n", "<leader>o", "<cmd>lua vim.lsp.buf.format() <CR>", opts)
 
 -- Split windows
 keymap("n", "<leader>v", "<C-w>v", opts)
@@ -50,6 +50,8 @@ keymap("n", "<leader>w", ":w <CR>", opts)
 vim.keymap.set("n", "<leader>y", "\"+y")
 vim.keymap.set("v", "<leader>y", "\"+y")
 vim.keymap.set("n", "<leader>Y", "\"+Y")
+vim.keymap.set("n", "<leader>p", "\"+p")
+vim.keymap.set("v", "<leader>p", "\"+p")
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", {silent = true})
 
 -- Resize with arrows
