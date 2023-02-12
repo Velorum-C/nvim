@@ -17,6 +17,7 @@ require("met.project")
 require("met.impatient")
 require("met.indentline")
 require("met.alpha")
+require("met.snippets")
 -- require "met.whichkey"
 require("met.autocommands")
 require("met.harpoon")

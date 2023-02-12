@@ -84,6 +84,10 @@ keymap("i", "kj", "<ESC>", opts)
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
+-- Press jk fast to exit insert mode 
+keymap("v", "jk", "<ESC>", opts)
+keymap("v", "jk", "<ESC>", opts)
+
 -- Move text up and down
 keymap("v", "<A-j>", ":m .+1<CR>==", opts)
 keymap("v", "<A-k>", ":m .-2<CR>==", opts)
