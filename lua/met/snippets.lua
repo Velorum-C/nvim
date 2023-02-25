@@ -43,5 +43,19 @@ ls.add_snippets(nil, {
 			insert(1, "main function goes here"),
 			text({"", "", "", "if __name__ == \"__main__\":", "\tmain()"}),
 		}),
+		snip({
+			trig = "while T",
+			namr = "try-catch",
+			dscr = "infinite loop that breaks out on exception",
+		},
+		{
+			text({"while True:", "\ttry:", "\t"}),
+			insert(1, "try statement"),
+			text({"\t", "except "}),
+			insert(2, "exception_name"),
+			text({":", "\t"}),
+			insert(3, "pass"),
+
+		}),
 	},
 })
