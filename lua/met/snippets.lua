@@ -7,6 +7,8 @@ local func = ls.function_node
 local choice = ls.choice_node
 local dynamicn = ls.dynamic_node
 
+
+
 local keymap = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 keymap("i", "<c-n>", "<cmd>lua require'luasnip'.jump(1)<CR>", opts)
