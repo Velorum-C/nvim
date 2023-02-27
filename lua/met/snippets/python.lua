@@ -80,33 +80,6 @@ end --}}}
 -- 	insert(1, "main function goes here"),
 -- 	text({"", "", "", "if __name__ == \"__main__\":", "\tmain()"}),
 -- }),
--- snip({
--- 	trig = "while T",
--- 	namr = "try-catch",
--- 	dscr = "infinite loop that breaks out on exception",
--- },
--- {
--- 	text({"while True:", "\ttry:", "\t\t"}),
--- 	insert(1, "try statement"),
--- 	text({"\t", "except "}),
--- 	insert(2, "exception_name"),
--- 	text({":", "\t"}),
--- 	insert(3, "pass"),
---
--- }),
--- snip({
--- 	trig = "test",
--- 	namr = "unit test",
--- 	dscr = "Create a function to test another",
--- },
--- {
--- 	text({"def test_"}),
--- 	insert(1, "function_name():"),
--- 	text({"():", "\tassert "}),
--- 	insert(2, "function_name"),
--- 	text({" == "}),
--- 	insert(3, "value"),
--- }),
 
 cs(
 	"test",
@@ -122,6 +95,43 @@ def test_{}():
 			i(3, "value"),
 		}
 	)
+)
+
+cs(
+	"while T",
+	fmt( -- Description
+		[[
+while True: 
+	try:
+		{}
+		break
+	except {}:
+		{}
+]],
+		{
+			i(1, "try statement"),
+			i(2, "exception name"),
+			c(3, { t("continue"), t("") }),
+		}
+	)
+)
+
+cs(
+	"defm",
+	fmt( -- define main and call it
+		[[
+def main():
+	{}
+
+
+if __name__ == "__main__":
+	main()
+]],
+		{
+			i(1, "main body"),
+		}
+	),
+	"auto"
 )
 
 -- End Refactoring --
