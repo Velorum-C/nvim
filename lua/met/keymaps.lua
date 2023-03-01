@@ -29,6 +29,14 @@ keymap("n", "<leader>b", "<cmd>Bdelete <CR>", opts)
 -- Insert blank space without insert mode
 keymap("n", "<Enter>", "o<ESC>", opts)
 
+-- Delete until closed pair
+keymap("n", ")", "ct)", opts)
+keymap("n", "]", "ct]", opts)
+keymap("n", "}", "ct}", opts)
+keymap("n", "'", "ct'", opts)
+keymap("n", "\"", "ct\"", opts)
+
+
 -- Open file explorer (netrw)
 keymap("n", "<leader>e", "<cmd>NvimTreeToggle <CR>", opts)
 
