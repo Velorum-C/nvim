@@ -30,11 +30,11 @@ keymap("n", "<leader>b", "<cmd>Bdelete <CR>", opts)
 keymap("n", "<Enter>", "o<ESC>", opts)
 
 -- Delete until closed pair
-keymap("n", ")", "ct)", opts)
-keymap("n", "]", "ct]", opts)
-keymap("n", "}", "ct}", opts)
-keymap("n", "'", "ct'", opts)
-keymap("n", "\"", "ct\"", opts)
+keymap("n", ")", "f(lct)", opts)
+keymap("n", "]", "f[lct]", opts)
+keymap("n", "}", "f{lct}", opts)
+keymap("n", "'", "f'lct'", opts)
+keymap("n", "\"", "f\"lct\"", opts)
 
 
 -- Open file explorer (netrw)
