@@ -10,6 +10,7 @@ require("met.treesitter")
 require("met.autopairs")
 require("met.comment")
 require("met.nvim-tree")
+require("nvim-tree").setup {}
 require("met.bufferline")
 require("met.lualine")
 require("met.toggleterm")
