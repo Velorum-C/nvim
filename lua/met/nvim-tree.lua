@@ -92,7 +92,6 @@ local function on_attach(bufnr)
   vim.keymap.set('n', '<2-RightMouse>', api.tree.change_root_to_node, opts('CD'))
   -- END_DEFAULT_ON_ATTACH
 
-
   -- Mappings migrated from view.mappings.list
   --
         { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" }
@@ -107,7 +106,7 @@ local function on_attach(bufnr)
 
 end
 
-nvim_tree.setup {
+nvim_tree.setup( {
   update_focused_file = {
     enable = true,
     update_cwd = true,
@@ -150,15 +149,5 @@ nvim_tree.setup {
       error = "",
     },
   },
-  -- view = {
-  --   width = 30,
-  --   side = "left",
-  --   mappings = {
-  --     list = {
-  --       { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
-  --       { key = "h", cb = tree_cb "close_node" },
-  --       { key = "v", cb = tree_cb "vsplit" },
-  --     },
-  --   },
-  -- },
 }
+)
