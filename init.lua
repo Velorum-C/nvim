@@ -4,14 +4,14 @@ require("met.keymaps") -- Map keys/combos to different keys/combos
 require("met.colorscheme") -- Set colorscheme 
 require("met.cmp")
 require("met.lsp")
+--require("met.ufo") -- Code folding
 require("met.gitsigns")
 require("met.neogit")
 require("met.telescope")
 require("met.autopairs")
 require("met.comment")
 require("met.treesitter")
-require("met.nvim-tree")
---require("nvim-tree").setup {}
+require("nvim-tree").setup {}
 require("met.bufferline")
 require("met.lualine")
 require("met.toggleterm") -- Open a floating terminal

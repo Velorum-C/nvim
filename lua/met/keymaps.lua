@@ -1,10 +1,8 @@
 local opts = { noremap = true, silent = true }
 
 local term_opts = { silent = true }
-
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
-
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
@@ -20,8 +18,16 @@ vim.g.maplocalleader = " "
 
 -- Normal --
 
+-- Ask about errors
+keymap("n", "<leader>d", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+
 -- Git
 keymap("n", "<leader>c", "<cmd>Neogit kind=vsplit <CR>", opts)
+
+-- Code folding
+--keymap("n", "<leader>n", require("ufo").openAllFolds, opts)
+--keymap("n", "<leader>m", require("ufo").closeAllFolds, opts)
+--vim.keymap.set("n", "<leader>n", require("ufo").openAllFolds)
 
 -- Better window navigation
 keymap("n", "<leader>h", "<C-w>h", opts)
@@ -41,7 +47,6 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<leader>b", "<cmd>Bdelete <CR>", opts)
 keymap("n", "<leader>q", ":q <CR>", opts)
 keymap("n", "<leader>w", ":w <CR>", opts)
-
 
 -- Insert blank space without insert mode
 keymap("n", "<Enter>", "o<ESC>", opts)
@@ -90,13 +95,11 @@ keymap("n", "<A-k>", "<Esc>:m .-2<CR>==", opts)
 -- Find and replace
 keymap("n", "<leader>r", ":%s/", opts)
 
-
 -- Insert --
 
 -- Press jk fast to enter normal mode
 keymap("i", "jk", "<ESC>", opts)
 keymap("i", "kj", "<ESC>", opts)
-
 
 -- Visual --
 
@@ -112,7 +115,6 @@ keymap("v", "jk", "<ESC>", opts)
 keymap("v", "<A-j>", ":m .+1<CR>==", opts)
 keymap("v", "<A-k>", ":m .-2<CR>==", opts)
 keymap("v", "p", '"_dP', opts)
-
 
 -- Visual Block --
 -- Move text up and down
