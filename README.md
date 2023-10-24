@@ -12,6 +12,12 @@ To see installed plugins use :PackerStatus
 To update plugins run :PackerUpdate (type r to revert)
 To uninstall a plugin, delete or comment the use line in plugins.lua and run :PackerClean
 
+### Keymaps
+Check keymaps.lua for "most" of the keymaps
+
+### Open terminal
+Crtl+\ opens a floating terminal
+
 ### Git integration
 <leader>c opens the Neogit box.
 From there, you can view and stage changes, commit and push.
@@ -21,3 +27,15 @@ From there, you can view and stage changes, commit and push.
 
 ### Prettify
 <leader>o makes your code pretty.
+
+### Comments
+In visual mode, type gc to un/comment, gb to comment a block.
+
+### Telescope
+<leader>f to fuzzy find
+<leader>g to grep find
+<C-v> open in split view (vertical)
+
+### Colorscheme
+Hard code colorscheme change in colorscheme.lua
+Change it in vim with :colorscheme

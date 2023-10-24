@@ -21,6 +21,7 @@ configs.setup({
 		"markdown_inline",
 	}, -- one of "all" or a list of languages
 	ignore_install = { "phpdoc" }, -- List of parsers to ignore installing
+	auto_install = true, -- Auto install a parser when entering a file
 	highlight = {
 		enable = true, -- false will disable the whole extension
 		-- disable = { "" }, -- list of language that will be disabled

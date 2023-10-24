@@ -43,8 +43,8 @@ keymap("n", "<leader>s", "<C-w>s", opts)
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
--- Closing windows
-keymap("n", "<leader>b", "<cmd>Bdelete <CR>", opts)
+-- Closing windows 
+keymap("n", "<leader>b", "<cmd>bdelete! <CR>", opts)
 keymap("n", "<leader>q", ":q <CR>", opts)
 keymap("n", "<leader>w", ":w <CR>", opts)
 
@@ -94,6 +94,10 @@ keymap("n", "<A-k>", "<Esc>:m .-2<CR>==", opts)
 
 -- Find and replace
 keymap("n", "<leader>r", ":%s/", opts)
+
+-- Block splitting
+keymap("n", ".", "<cmd> TSJToggle <CR>", opts)
+
 
 -- Insert --
 
