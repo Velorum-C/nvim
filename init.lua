@@ -1,4 +1,5 @@
 -- Cleaned
+require("met.options") -- Vim options
 require("met.plugins") -- Install plugins
 require("met.keymaps") -- Map keys/combos to different keys/combos
 require("met.colorscheme") -- Set colorscheme 
@@ -13,12 +14,11 @@ require("met.telescope") -- Quickly find files
 require("met.lualine") -- Bar at the bottom that shows git, vim, and file info
 require("met.harpoon") -- Cycle through most commonly used files
 require("met.bufferline") -- Bar at the top to show which buffers are open 
+require("met.flash") -- Quickly search within files
+require("met.gitsigns") -- Left bar showing git info
 -- Not cleaned
-require("met.options")
-require("met.cmp")
-require("met.lsp")
---require("met.ufo") -- Code folding
-require("met.gitsigns")
+require("met.cmp") -- Autocompletion
+require("met.lsp") -- Language Server Protocol
 require("met.autopairs")
 require("met.project")
 require("met.impatient")
@@ -28,6 +28,7 @@ require("met.autocommands")
 require("met.undotree")
 require("met.debugger")
 require("met.fugitive")
+--require("met.ufo") -- Code folding
 vim.cmd([[
 let g:python_pep8_indent_multiline_string = -1
 let g:python_pep8_indent_hang_closing = 0

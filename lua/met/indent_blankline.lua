@@ -19,7 +19,7 @@ vim.wo.colorcolumn = "99999"
 
 indent_blankline.setup({
 	indent = {
-		char = "|",
-		--highlight = highlight
+		char = "▎",
+	--	highlight = highlight
 	},
 })

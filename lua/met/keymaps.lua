@@ -98,6 +98,9 @@ keymap("n", "<leader>r", ":%s/", opts)
 -- Block splitting
 keymap("n", ".", "<cmd> TSJToggle <CR>", opts)
 
+-- Flash
+keymap("n", "<leader>t", "<cmd> lua require('flash').jump() <CR>", opts)
+
 
 -- Insert --
 

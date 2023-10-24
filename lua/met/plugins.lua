@@ -67,6 +67,7 @@ return packer.startup(function(use)
 	use({ "NeogitOrg/neogit"})
 	use({ "mfussenegger/nvim-dap"})
 	use({ "mfussenegger/nvim-dap-python"})
+	use({ "folke/flash.nvim"})
 	use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
 	use { "Wansmer/treesj", requires = {"nvim-treesitter/nvim-treesitter"} }
 	--use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async"})
