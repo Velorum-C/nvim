@@ -16,8 +16,8 @@ require("met.harpoon") -- Cycle through most commonly used files
 require("met.bufferline") -- Bar at the top to show which buffers are open 
 require("met.flash") -- Quickly search within files
 require("met.gitsigns") -- Left bar showing git info
--- Not cleaned
 require("met.cmp") -- Autocompletion
+-- Not cleaned
 require("met.lsp") -- Language Server Protocol
 require("met.autopairs")
 require("met.project")
@@ -35,3 +35,5 @@ let g:python_pep8_indent_hang_closing = 0
 filetype indent on
 let g:AutoPairsFlyMode = 1
 ]])
+
+

@@ -21,6 +21,10 @@ Crtl+\ opens a floating terminal
 ### Git integration
 <leader>c opens the Neogit box.
 From there, you can view and stage changes, commit and push.
+1. TAB 
+2. s 
+3. c ... c 
+4. p 
 
 ### Ask for help with errors
 <leader>d whenever you see a warning on the left.
