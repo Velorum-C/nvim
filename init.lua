@@ -9,7 +9,7 @@ require("met.toggleterm") -- Open a floating terminal
 require("met.treesitter") -- Better syntax highlighting and language parsing
 require("met.indent_blankline") -- Vertical scope identifiers
 require("met.treesj") -- Split and join blocks
-require("met.comment") -- Quickly add comments and multiline comments
+--require("met.comment") -- Quickly add comments and multiline comments
 require("met.telescope") -- Quickly find files
 require("met.lualine") -- Bar at the bottom that shows git, vim, and file info
 require("met.harpoon") -- Cycle through most commonly used files
@@ -17,6 +17,7 @@ require("met.bufferline") -- Bar at the top to show which buffers are open
 require("met.flash") -- Quickly search within files
 require("met.gitsigns") -- Left bar showing git info
 require("met.cmp") -- Autocompletion
+require("met.chatgpt") -- Chat GPT plugin
 -- Not cleaned
 require("met.lsp") -- Language Server Protocol
 require("met.autopairs")

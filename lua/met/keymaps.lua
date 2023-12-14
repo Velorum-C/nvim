@@ -29,6 +29,14 @@ keymap("n", "<leader>c", "<cmd>Neogit kind=vsplit <CR>", opts)
 --keymap("n", "<leader>m", require("ufo").closeAllFolds, opts)
 --vim.keymap.set("n", "<leader>n", require("ufo").openAllFolds)
 
+--ChatGPT
+keymap("n", "<leader>gg", "<cmd>GpChatToggle popup<CR>", opts)
+keymap("n", "<leader>gr", "<cmd>GpChatRespond<CR>", opts)
+keymap("n", "<leader>gn", "<cmd>GpChatNew popup<CR>", opts)
+keymap("v", "<leader>gg", "<cmd>GpChatToggle popup<CR>", opts)
+keymap("v", "<leader>gr", "<cmd>GpChatRespond<CR>", opts)
+keymap("v", "<leader>gn", "<cmd>GpChatNew popup<CR>", opts)
+
 -- Better window navigation
 keymap("n", "<leader>h", "<C-w>h", opts)
 keymap("n", "<leader>j", "<C-w>j", opts)
@@ -43,7 +51,7 @@ keymap("n", "<leader>s", "<C-w>s", opts)
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
--- Closing windows 
+-- Closing windows
 keymap("n", "<leader>b", "<cmd>bdelete! <CR>", opts)
 keymap("n", "<leader>q", ":q <CR>", opts)
 keymap("n", "<leader>w", ":w <CR>", opts)
@@ -63,7 +71,7 @@ keymap("n", "<leader>e", "<cmd>NvimTreeToggle <CR>", opts)
 
 -- Telescope
 keymap("n", "<leader>i", "<cmd>Telescope git_files <CR>", opts)
-keymap("n", "<leader>g", "<cmd>Telescope live_grep <CR>", opts)
+keymap("n", "<leader>u", "<cmd>Telescope live_grep <CR>", opts)
 keymap(
 	"n",
 	"<leader>f",
@@ -100,7 +108,6 @@ keymap("n", ".", "<cmd> TSJToggle <CR>", opts)
 
 -- Flash
 keymap("n", "<leader>t", "<cmd> lua require('flash').jump() <CR>", opts)
-
 
 -- Insert --
 

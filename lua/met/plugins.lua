@@ -70,6 +70,7 @@ return packer.startup(function(use)
 	use({ "folke/flash.nvim"})
 	use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
 	use { "Wansmer/treesj", requires = {"nvim-treesitter/nvim-treesitter"} }
+	use({ "robitx/gp.nvim"})
 	--use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async"})
 
 	-- Colorschemes

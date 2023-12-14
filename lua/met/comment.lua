@@ -11,6 +11,7 @@ comment.setup({
 		if not status_utils_ok then
 			return
 		end
+		vim.g.skip_ts_context_commentstring_module = true
 
 		local location = nil
 		if ctx.ctype == U.ctype.block then
