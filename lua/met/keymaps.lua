@@ -29,13 +29,19 @@ keymap("n", "<leader>c", "<cmd>Neogit kind=vsplit <CR>", opts)
 --keymap("n", "<leader>m", require("ufo").closeAllFolds, opts)
 --vim.keymap.set("n", "<leader>n", require("ufo").openAllFolds)
 
+-- Tmux navigation
+keymap("n", "<C-h>", "<cmd>TmuxNavigateLeft<CR>", opts)
+keymap("n", "<C-l>", "<cmd>TmuxNavigateRight<CR>", opts)
+keymap("n", "<C-j>", "<cmd>TmuxNavigateDown<CR>", opts)
+keymap("n", "<C-k>", "<cmd>TmuxNavigateUp<CR>", opts)
+
 --ChatGPT
-keymap("n", "<leader>gg", "<cmd>GpChatToggle popup<CR>", opts)
-keymap("n", "<leader>gr", "<cmd>GpChatRespond<CR>", opts)
-keymap("n", "<leader>gn", "<cmd>GpChatNew popup<CR>", opts)
-keymap("v", "<leader>gg", "<cmd>GpChatToggle popup<CR>", opts)
-keymap("v", "<leader>gr", "<cmd>GpChatRespond<CR>", opts)
-keymap("v", "<leader>gn", "<cmd>GpChatNew popup<CR>", opts)
+--keymap("n", "<leader>gg", "<cmd>GpChatToggle popup<CR>", opts)
+--keymap("n", "<leader>gr", "<cmd>GpChatRespond<CR>", opts)
+--keymap("n", "<leader>gn", "<cmd>GpChatNew popup<CR>", opts)
+--keymap("v", "<leader>gg", "<cmd>GpChatToggle popup<CR>", opts)
+--keymap("v", "<leader>gr", "<cmd>GpChatRespond<CR>", opts)
+--keymap("v", "<leader>gn", "<cmd>GpChatNew popup<CR>", opts)
 
 -- Better window navigation
 keymap("n", "<leader>h", "<C-w>h", opts)
@@ -71,7 +77,7 @@ keymap("n", "<leader>e", "<cmd>NvimTreeToggle <CR>", opts)
 
 -- Telescope
 keymap("n", "<leader>i", "<cmd>Telescope git_files <CR>", opts)
-keymap("n", "<leader>u", "<cmd>Telescope live_grep <CR>", opts)
+keymap("n", "<leader>g", "<cmd>Telescope live_grep <CR>", opts)
 keymap(
 	"n",
 	"<leader>f",

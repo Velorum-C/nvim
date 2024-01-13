@@ -1,7 +1,9 @@
--- Cleaned
+-- Essentials
 require("met.options") -- Vim options
 require("met.plugins") -- Install plugins
 require("met.keymaps") -- Map keys/combos to different keys/combos
+
+-- Plugin configs
 require("met.colorscheme") -- Set colorscheme 
 require("met.neogit") -- Git integration
 require("nvim-tree").setup {} -- File explorer tree
@@ -17,7 +19,8 @@ require("met.bufferline") -- Bar at the top to show which buffers are open
 require("met.flash") -- Quickly search within files
 require("met.gitsigns") -- Left bar showing git info
 require("met.cmp") -- Autocompletion
-require("met.chatgpt") -- Chat GPT plugin
+--require("met.noice") -- Messages, popups and commands UI
+--require("met.chatgpt") -- Chat GPT plugin
 -- Not cleaned
 require("met.lsp") -- Language Server Protocol
 require("met.autopairs")

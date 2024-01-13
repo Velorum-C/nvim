@@ -14,6 +14,7 @@ local settings = {
 
 local servers = {
 	"sumneko_lua",
+	"rust-analyzer",
 	"cssls",
 	"html",
 	"tsserver",

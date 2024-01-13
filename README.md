@@ -2,6 +2,7 @@ README file
 
 save plugins.lua file
 run :Mason
+run :TSInstall
 run :checkhealth
 
 ### Plugin manager
@@ -22,7 +23,7 @@ Crtl+\ opens a floating terminal
 <leader>c opens the Neogit box.
 From there, you can view and stage changes, commit and push.
 1. TAB to view
-2. s to stage 
+2. s to stage (S to stage all)
 3. c ... c to commit
 4. P ... p to push 
 5. p ... p to pull
