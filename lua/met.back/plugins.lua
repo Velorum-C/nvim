@@ -13,7 +13,6 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Install your plugins here
 local plugins = {
-	"nvim-lua/plenary.nvim",
 	"windwp/nvim-autopairs",
 	"numToStr/Comment.nvim",
 	"JoosepAlviste/nvim-ts-context-commentstring",
@@ -34,7 +33,6 @@ local plugins = {
 	"tpope/vim-fugitive",
 	"jose-elias-alvarez/null-ls.nvim",
 	"RRethy/vim-illuminate",
-	"nvim-telescope/telescope.nvim",
 	"lewis6991/gitsigns.nvim",
 	"NeogitOrg/neogit",
 	"mfussenegger/nvim-dap",
@@ -42,49 +40,55 @@ local plugins = {
 	"folke/flash.nvim",
 	"robitx/gp.nvim",
 	"christoomey/vim-tmux-navigator",
-	"folke/tokyonight.nvim",
-	"lunarvim/darkplus.nvim",
+	--"folke/tokyonight.nvim",
+	--"lunarvim/darkplus.nvim",
 	"lunarvim/colorschemes",
 	"rose-pine/neovim",
 	as = "rose-pine",
-	"nvim-treesitter/nvim-treesitter",
 	"p00f/nvim-ts-rainbow",
 	"windwp/nvim-ts-autotag",
 	{
+		"nvim-telescope/telescope.nvim",
+		dependencies = {
+			"nvim-lua/plenary.nvim"
+		}
+	},
+	{
 		"rcarriga/nvim-dap-ui",
 		dependencies = {
-			{ "mfussenegger/nvim-dap" },
+			"mfussenegger/nvim-dap",
 		},
 	},
 	{
 		"Wansmer/treesj",
 		dependencies = {
-			{ "nvim-treesitter/nvim-treesitter" },
+			"nvim-treesitter/nvim-treesitter",
 		},
 	},
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
 		dependencies = {
-			{ "MunifTanjim/nui.nvim" },
-			{ "rcarriga/nvim-notify" },
+			"MunifTanjim/nui.nvim",
+			"rcarriga/nvim-notify",
 		},
 	},
 	{
 		"VonHeikemen/lsp-zero.nvim",
 		dependencies = {
-			{ "williamboman/mason.nvim" },
-			{ "williamboman/mason-lspconfig.nvim" },
-			{ "neovim/nvim-lspconfig" },
-			{ "hrsh7th/nvim-cmp" },
-			{ "hrsh7th/cmp-buffer" },
-			{ "hrsh7th/cmp-path" },
-			{ "hrsh7th/cmp-cmdline" },
-			{ "saadparwaiz1/cmp_luasnip" },
-			{ "hrsh7th/cmp-nvim-lsp" },
-			{ "hrsh7th/cmp-nvim-lua" },
-			{ "L3MON4D3/LuaSnip" },
-			{ "rafamadriz/friendly-snippets" },
+			"neovim/nvim-lspconfig",
+			"williamboman/mason.nvim",
+			"williamboman/mason-lspconfig.nvim",
+			"hrsh7th/nvim-cmp",
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-path",
+			"hrsh7th/cmp-cmdline",
+			"saadparwaiz1/cmp_luasnip",
+			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-nvim-lua",
+			"L3MON4D3/LuaSnip",
+			"rafamadriz/friendly-snippets",
+			"folke/neodev.nvim",
 		},
 	},
 }
