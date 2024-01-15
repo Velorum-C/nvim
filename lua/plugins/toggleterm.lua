@@ -1,6 +1,6 @@
 return {
 	"akinsho/toggleterm.nvim",
-	opt = {
+	opts = {
 		size = 20,
 		open_mapping = [[<C-\>]],
 		hide_numbers = true,

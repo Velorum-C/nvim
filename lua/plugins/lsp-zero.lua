@@ -1,5 +1,6 @@
 return {
     'VonHeikemen/lsp-zero.nvim',
+	event = "InsertEnter",
 	dependencies = {
 		"neovim/nvim-lspconfig",
 		"williamboman/mason.nvim",
@@ -16,7 +17,6 @@ return {
 		"folke/neodev.nvim",
 	},
     branch = 'v3.x',
-    lazy = true,
     config = false,
     init = function()
       -- Disable automatic setup, we are doing it manually
