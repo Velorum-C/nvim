@@ -1,16 +1,16 @@
 return {
-	'hrsh7th/nvim-cmp',
+	"hrsh7th/nvim-cmp",
 	event = "InsertEnter",
 	dependencies = {
-		'L3MON4D3/LuaSnip', -- snippet engine
+		"L3MON4D3/LuaSnip", -- snippet engine
 		"hrsh7th/cmp-buffer", -- source for text in buffer
 		"hrsh7th/cmp-path", -- source for file system paths
 		"saadparwaiz1/cmp_luasnip", -- for autocompletion
 		"rafamadriz/friendly-snippets", -- useful snippets
 	},
 	config = function()
-		local cmp = require('cmp')
-		local luasnip = require('luasnip')
+		local cmp = require("cmp")
+		local luasnip = require("luasnip")
 		require("luasnip.loaders.from_vscode").lazy_load()
 
 		local check_backspace = function()
@@ -20,31 +20,31 @@ return {
 
 		--   פּ ﯟ   some other good icons
 		local kind_icons = {
-			Text = "A",
-			Method = "m",
-			Function = "I",
-			Constructor = "",
-			Field = "",
-			Variable = "",
-			Class = "B",
-			Interface = "",
-			Module = "",
-			Property = "",
-			Unit = "",
-			Value = "C",
-			Enum = "",
-			Keyword = "D",
-			Snippet = "",
-			Color = "E",
-			File = "",
-			Reference = "",
-			Folder = "F",
-			EnumMember = "",
-			Constant = "G",
-			Struct = "",
-			Event = "",
-			Operator = "",
-			TypeParameter = "H",
+			Text = "A ",
+			Method = "m ",
+			Function = "I ",
+			Constructor = " ",
+			Field = " ",
+			Variable = " ",
+			Class = "B ",
+			Interface = " ",
+			Module = " ",
+			Property = " ",
+			Unit = " ",
+			Value = "C ",
+			Enum = " ",
+			Keyword = "D ",
+			Snippet = " ",
+			Color = "E ",
+			File = " ",
+			Reference = " ",
+			Folder = "F ",
+			EnumMember = " ",
+			Constant = "G ",
+			Struct = " ",
+			Event = " ",
+			Operator = " ",
+			TypeParameter = "H ",
 		}
 
 		cmp.setup({
@@ -139,20 +139,20 @@ return {
 			},
 		})
 
-		cmp.setup.cmdline({ '/', '?' }, {
+		cmp.setup.cmdline({ "/", "?" }, {
 			mapping = cmp.mapping.preset.cmdline(),
 			sources = {
-				{ name = 'buffer' }
-			}
+				{ name = "buffer" },
+			},
 		})
 
-		cmp.setup.cmdline(':', {
+		cmp.setup.cmdline(":", {
 			mapping = cmp.mapping.preset.cmdline(),
 			sources = cmp.config.sources({
-				{ name = 'path' }
+				{ name = "path" },
 			}, {
-				{ name = 'cmdline' }
-			})
+				{ name = "cmdline" },
+			}),
 		})
-	end
+	end,
 }

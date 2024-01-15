@@ -25,7 +25,7 @@ keymap("n", "<leader>q", "<cmd>q<CR>", opts)
 keymap("n", "<leader>w", "<cmd>w<CR>", opts)
 
 -- Git
-keymap("n", "<leader>c", "<cmd>Neogit kind=vsplit <CR>", opts)
+keymap("n", "<leader>c", "<cmd>Neogit kind=vsplit<CR>", opts)
 
 -- <leader>d used in lsp.lua
 
@@ -111,6 +111,9 @@ keymap("n", "]", "f[lct]", opts)
 keymap("n", "}", "f{lct}", opts)
 keymap("n", "'", "f'lct'", opts)
 keymap("n", '"', 'f"lct"', opts)
+
+-- Toggleterm
+-- keymap("n", [[<C-\>]], "<cmd>ToggleTerm<CR>", opts)
 
 --ChatGPT
 --keymap("n", "<leader>gg", "<cmd>GpChatToggle popup<CR>", opts)
