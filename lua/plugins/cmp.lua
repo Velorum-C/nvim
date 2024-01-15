@@ -2,18 +2,16 @@ return {
 	'hrsh7th/nvim-cmp',
 	event = "InsertEnter",
 	dependencies = {
-		{ 'L3MON4D3/LuaSnip' },
+		'L3MON4D3/LuaSnip', -- snippet engine
+		"hrsh7th/cmp-buffer", -- source for text in buffer
+		"hrsh7th/cmp-path", -- source for file system paths
+		"saadparwaiz1/cmp_luasnip", -- for autocompletion
+		"rafamadriz/friendly-snippets", -- useful snippets
 	},
 	config = function()
-		-- Here is where you configure the autocompletion settings.
-		local lsp_zero = require('lsp-zero')
-		lsp_zero.extend_cmp()
-
-		-- And you can configure cmp even more, if you want to.
 		local cmp = require('cmp')
 		local luasnip = require('luasnip')
-
-		require("luasnip/loaders/from_vscode").lazy_load()
+		require("luasnip.loaders.from_vscode").lazy_load()
 
 		local check_backspace = function()
 			local col = vim.fn.col(".") - 1
@@ -50,6 +48,9 @@ return {
 		}
 
 		cmp.setup({
+			completion = {
+				completeopt = "menu,menuone,preview,noselect",
+			},
 			snippet = {
 				expand = function(args)
 					luasnip.lsp_expand(args.body) -- For `luasnip` users.
@@ -58,8 +59,8 @@ return {
 			mapping = {
 				["<C-k>"] = cmp.mapping.select_prev_item(),
 				["<C-j>"] = cmp.mapping.select_next_item(),
-				["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
-				["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
+				["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
+				["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
 				["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
 				["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
 				["<C-e>"] = cmp.mapping({
@@ -115,9 +116,9 @@ return {
 			},
 			sources = {
 				{ name = "luasnip" },
+				{ name = "nvim_lsp" },
 				{ name = "buffer" },
 				{ name = "path" },
-				{ name = "nvim_lsp" },
 			},
 			confirm_opts = {
 				behavior = cmp.ConfirmBehavior.Replace,

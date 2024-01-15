@@ -1,6 +1,6 @@
 return {
 	"windwp/nvim-autopairs",
-	opt = {
+	opts = {
 		check_ts = true,
 		ts_config = {
 			lua = { "string", "source" },

@@ -16,35 +16,42 @@ vim.g.maplocalleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
+-- Ask about errors
+keymap("n", "<leader>a", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+
 -- Closing windows
-keymap("n", "<leader>b", "<cmd>bdelete! <CR>", opts)
-keymap("n", "<leader>q", ":q <CR>", opts)
-keymap("n", "<leader>w", ":w <CR>", opts)
+keymap("n", "<leader>b", "<cmd>bdelete!<CR>", opts)
+keymap("n", "<leader>q", "<cmd>q<CR>", opts)
+keymap("n", "<leader>w", "<cmd>w<CR>", opts)
 
 -- Git
 keymap("n", "<leader>c", "<cmd>Neogit kind=vsplit <CR>", opts)
 
--- Ask about errors
-keymap("n", "<leader>d", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+-- <leader>d used in lsp.lua
 
 -- Open file explorer (netrw)
 keymap("n", "<leader>e", "<cmd>NvimTreeToggle <CR>", opts)
 
 -- Telescope
-keymap(
-	"n",
-	"<leader>f",
-	"<cmd>lua require 'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({previewer = false})) <CR>",
-	opts
-)
-keymap("n", "<leader>g", "<cmd>Telescope live_grep <CR>", opts)
-keymap("n", "<leader>i", "<cmd>Telescope git_files <CR>", opts)
+keymap("n", "<leader>ff", "<cmd>Telescope find_files<CR>", opts)
+keymap("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", opts)
+keymap("n", "<leader>fh", "<cmd>Telescope git_files<CR>", opts)
+
+-- <leader>j and <leader>k used in lsp.lua
 
 -- Lazy
 keymap("n", "<leader>l", "<cmd>Lazy <CR>", opts)
 
--- Format with null-ls
-keymap("n", "<leader>o", "<cmd>lua vim.lsp.buf.format() <CR>", opts)
+-- <leader>m used in lsp.lua
+
+-- Format with conform
+--keymap("n", "<leader>o", "<cmd>lua vim.lsp.buf.format()<CR>", opts)
+keymap(
+	"n",
+	"<leader>o",
+	"<cmd>lua require('conform').format({lsp_fallback = true, async = false, timeout_ms = 500})<CR>",
+	opts
+)
 
 -- Find and replace
 keymap("n", "<leader>r", ":%s/", opts)
