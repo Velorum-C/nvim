@@ -78,8 +78,8 @@ return {
 						["?"] = actions.which_key,
 					},
 				},
-			}
+			},
 		})
 		telescope.load_extension("fzf")
-	end
+	end,
 }

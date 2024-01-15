@@ -1,6 +1,8 @@
 return {
 	"nvim-lualine/lualine.nvim",
 	config = function()
+		local lazy_status = require("lazy.status")
+
 		local hide_in_width = function()
 			return vim.fn.winwidth(0) > 80
 		end
@@ -31,14 +33,14 @@ return {
 		local filetype = {
 			"filetype",
 			icons_enabled = true,
-			icon = "",
+			icon = " ",
 		}
 
 		local diff = {
 			"diff",
 			colored = false,
 			symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
-			cond = hide_in_width
+			cond = hide_in_width,
 		}
 
 		local spaces = function()
@@ -59,8 +61,6 @@ return {
 			return chars[index]
 		end
 
-		local lazy_status = require("lazy.status")
-
 		require("lualine").setup({
 			options = {
 				icons_enabled = true,
@@ -74,7 +74,12 @@ return {
 				lualine_a = { branch, diagnostics },
 				lualine_b = { mode },
 				lualine_c = { filetype, "hostname", "fileformat" },
-				lualine_x = { { lazy_status.updates, cond = lazy_status.has_updates, color = { fg = "#ff9364" } }, diff, spaces, "encoding" },
+				lualine_x = {
+					{ lazy_status.updates, cond = lazy_status.has_updates, color = { fg = "#ff9364" } },
+					diff,
+					spaces,
+					"encoding",
+				},
 				lualine_y = { location },
 				lualine_z = { progress },
 			},
@@ -89,5 +94,5 @@ return {
 			tabline = {},
 			extensions = {},
 		})
-	end
+	end,
 }
