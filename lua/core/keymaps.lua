@@ -1,6 +1,5 @@
 local opts = { noremap = true, silent = true }
 
-local term_opts = { silent = true }
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 --Remap space as leader key
@@ -24,8 +23,7 @@ keymap("n", "<leader>b", "<cmd>bdelete!<CR>", opts)
 keymap("n", "<leader>q", "<cmd>q<CR>", opts)
 keymap("n", "<leader>w", "<cmd>w<CR>", opts)
 
--- Git
-keymap("n", "<leader>c", "<cmd>Neogit kind=vsplit<CR>", opts)
+-- <leader>c used in comment.lua
 
 -- <leader>d used in lsp.lua
 
@@ -36,6 +34,9 @@ keymap("n", "<leader>e", "<cmd>NvimTreeToggle <CR>", opts)
 keymap("n", "<leader>ff", "<cmd>Telescope find_files<CR>", opts)
 keymap("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fh", "<cmd>Telescope git_files<CR>", opts)
+
+-- Git
+keymap("n", "<leader>g", "<cmd>Neogit kind=vsplit<CR>", opts)
 
 -- <leader>j and <leader>k used in lsp.lua
 
@@ -57,7 +58,7 @@ keymap(
 keymap("n", "<leader>r", ":%s/", opts)
 
 -- Flash
-keymap("n", "<leader>t", "<cmd> lua require('flash').jump() <CR>", opts)
+keymap("n", "<leader>t", "<cmd>lua require('flash').treesitter_search()<CR>", opts)
 
 -- Change to executable
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })

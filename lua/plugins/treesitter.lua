@@ -3,6 +3,7 @@ return {
 	build = ":TSUpdate",
 	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
+		"nvim-treesitter/nvim-treesitter-textobjects",
 		"windwp/nvim-ts-autotag",
 		"windwp/nvim-autopairs",
 	},
@@ -19,12 +20,7 @@ return {
 				"javascript",
 				"json",
 				"python",
-				"typescript",
-				"tsx",
-				"css",
 				"rust",
-				"java",
-				"yaml",
 				"markdown",
 				"markdown_inline",
 			}, -- one of "all" or a list of languages
