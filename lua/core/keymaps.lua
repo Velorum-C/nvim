@@ -46,7 +46,6 @@ keymap("n", "<leader>l", "<cmd>Lazy <CR>", opts)
 -- <leader>m used in lsp.lua
 
 -- Format with conform
---keymap("n", "<leader>o", "<cmd>lua vim.lsp.buf.format()<CR>", opts)
 keymap(
 	"n",
 	"<leader>o",
@@ -58,7 +57,7 @@ keymap(
 keymap("n", "<leader>r", ":%s/", opts)
 
 -- Flash
-keymap("n", "<leader>t", "<cmd>lua require('flash').treesitter_search()<CR>", opts)
+keymap("n", "<leader>t", "<cmd>lua require('flash').jump()<CR>", opts)
 
 -- Change to executable
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
