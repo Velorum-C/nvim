@@ -28,6 +28,8 @@ wk.register({
 		"<cmd>bdelete!<CR>",
 		"Close window",
 	},
+	-- c used in comment.lua
+	-- d used in lsp.lua
 	e = {
 		-- NvimTree
 		"<cmd>NvimTreeToggle<CR>",
@@ -47,12 +49,14 @@ wk.register({
 		"Git",
 		opts,
 	},
+	-- j and k used in lsp.lua
 	l = {
 		-- Lazy
 		"<cmd>Lazy<CR>",
 		"Lazy plugin manager",
 		opts,
 	},
+	-- m used in lsp.lua
 	o = {
 		-- Format
 		"<cmd>lua require('conform').format({lsp_fallback = true, async = false, timeout_ms = 500})<CR>",
@@ -69,6 +73,16 @@ wk.register({
 		":%s/",
 		"Find and replace",
 		opts,
+	},
+	s = {
+		name = "Gitsigns",
+		s = { "<cmd>lua require('gitsigns').stage_hunk()<CR>", "Stage hunk", opts },
+		u = { "<cmd>lua require('gitsigns').undo_stage_hunk()<CR>", "Undo stage hunk", opts },
+		r = { "<cmd>lua require('gitsigns').reset_hunk()<CR>", "Reset hunk", opts },
+		p = { "<cmd>lua require('gitsigns').preview_hunk()<CR>", "Preview hunk", opts },
+		b = { "<cmd>lua require('gitsigns').blame_line()<CR>", "Blame line", opts },
+		d = { "<cmd>lua require('gitsigns').diffthis('~1')<CR>", "Diff this", opts },
+		n = { "<cmd>lua require('gitsigns').next_hunk()<CR>", "Next hunk", opts },
 	},
 	t = {
 		"<cmd>lua require('flash').jump()<CR>",
@@ -87,11 +101,6 @@ wk.register({
 		silent = true,
 	},
 }, { prefix = "<leader>" })
-
--- <leader>c used in comment.lua
--- <leader>d used in lsp.lua
--- <leader>j and <leader>k used in lsp.lua
--- <leader>m used in lsp.lua
 
 -- Block splitting
 keymap("n", ".", "<cmd> TSJToggle <CR>", opts)
