@@ -1,3 +1,4 @@
+local wk = require("which-key")
 local opts = { noremap = true, silent = true }
 
 -- Shorten function name
@@ -15,52 +16,82 @@ vim.g.maplocalleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
--- Ask about errors
-keymap("n", "<leader>a", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-
--- Closing windows
-keymap("n", "<leader>b", "<cmd>bdelete!<CR>", opts)
-keymap("n", "<leader>q", "<cmd>q<CR>", opts)
-keymap("n", "<leader>w", "<cmd>w<CR>", opts)
+wk.register({
+	a = {
+		-- Ask about errors
+		"<cmd>lua vim.lsp.buf.hover()<CR>",
+		"Ask about errors",
+		opts,
+	},
+	b = {
+		-- Closing windows
+		"<cmd>bdelete!<CR>",
+		"Close window",
+	},
+	e = {
+		-- NvimTree
+		"<cmd>NvimTreeToggle<CR>",
+		"Toggle file explorer",
+		opts,
+	},
+	f = {
+		-- Telescope
+		name = "Find",
+		f = { "<cmd>Telescope find_files<CR>", "File", opts },
+		g = { "<cmd>Telescope live_grep<CR>", "Grep", opts },
+		h = { "<cmd>Telescope git_files<CR>", "Git", opts },
+	},
+	g = {
+		-- Neogit
+		"<cmd>Neogit kind=vsplit<CR>",
+		"Git",
+		opts,
+	},
+	l = {
+		-- Lazy
+		"<cmd>Lazy<CR>",
+		"Lazy plugin manager",
+		opts,
+	},
+	o = {
+		-- Format
+		"<cmd>lua require('conform').format({lsp_fallback = true, async = false, timeout_ms = 500})<CR>",
+		"Prettify",
+		opts,
+	},
+	q = {
+		-- Quit
+		"<cmd>q<CR>",
+		"Quit",
+		opts,
+	},
+	r = {
+		":%s/",
+		"Find and replace",
+		opts,
+	},
+	t = {
+		"<cmd>lua require('flash').jump()<CR>",
+		"Jump",
+		opts,
+	},
+	w = {
+		-- Write
+		"<cmd>w<CR>",
+		"Write",
+		opts,
+	},
+	x = {
+		"<cmd>!chmod +x %<CR>",
+		"Make executable",
+		silent = true,
+	},
+}, { prefix = "<leader>" })
 
 -- <leader>c used in comment.lua
-
 -- <leader>d used in lsp.lua
-
--- Open file explorer (netrw)
-keymap("n", "<leader>e", "<cmd>NvimTreeToggle <CR>", opts)
-
--- Telescope
-keymap("n", "<leader>ff", "<cmd>Telescope find_files<CR>", opts)
-keymap("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", opts)
-keymap("n", "<leader>fh", "<cmd>Telescope git_files<CR>", opts)
-
--- Git
-keymap("n", "<leader>g", "<cmd>Neogit kind=vsplit<CR>", opts)
-
 -- <leader>j and <leader>k used in lsp.lua
-
--- Lazy
-keymap("n", "<leader>l", "<cmd>Lazy <CR>", opts)
-
 -- <leader>m used in lsp.lua
-
--- Format with conform
-keymap(
-	"n",
-	"<leader>o",
-	"<cmd>lua require('conform').format({lsp_fallback = true, async = false, timeout_ms = 500})<CR>",
-	opts
-)
-
--- Find and replace
-keymap("n", "<leader>r", ":%s/", opts)
-
--- Flash
-keymap("n", "<leader>t", "<cmd>lua require('flash').jump()<CR>", opts)
-
--- Change to executable
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- Block splitting
 keymap("n", ".", "<cmd> TSJToggle <CR>", opts)
