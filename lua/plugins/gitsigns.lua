@@ -2,19 +2,13 @@ return {
 	"lewis6991/gitsigns.nvim",
 	config = function()
 		local gitsigns = require("gitsigns")
-
 		gitsigns.setup({
 			signs = {
-				add = { text = " ▎" },
-				delete = {
-					text = " 契",
-				},
-				topdelete = {
-					text = " 契",
-				},
-				changedelete = {
-					text = " ▎",
-				},
+				add = { text = "󰮇 " },
+				change = { text = " ▎" },
+				delete = { text = " " },
+				topdelete = { text = "契" },
+				changedelete = { text = "󰣙 " },
 			},
 			signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
 			numhl = false, -- Toggle with `:Gitsigns toggle_numhl`
