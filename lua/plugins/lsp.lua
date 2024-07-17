@@ -76,6 +76,16 @@ return {
 			on_attach = on_attach,
 		})
 
+		-- configure C# server
+		lspconfig["omnisharp"].setup({
+			cmd = {
+				"/home/met/.local/bin/omnisharp-roslyn/OmniSharp",
+				"--languageserver",
+			},
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
 		-- configure lua server (with special settings)
 		lspconfig["lua_ls"].setup({
 			capabilities = capabilities,
