@@ -1,6 +1,9 @@
 return {
 	"numToStr/Comment.nvim",
-	lazy = true,
+	dependencies = {
+		"JoosepAlviste/nvim-ts-context-commentstring",
+	},
+	keys = "<leader>c",
 	config = function()
 		require("Comment").setup({
 			toggler = {

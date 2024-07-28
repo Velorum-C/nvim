@@ -1,3 +1,4 @@
+-- Vim start up screen
 return {
 	"goolord/alpha-nvim",
 	event = "VimEnter",
