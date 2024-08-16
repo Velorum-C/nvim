@@ -9,9 +9,8 @@ return {
 				javascript = { "prettier" },
 				markdown = { "prettier" },
 				html = { "prettier" },
-				python = { "isort", "black" },
+				python = { "black" }, --, "isort" },
 				lua = { "stylua" },
-				rust = { "rustfmt" },
 			},
 			format_on_save = {
 				lsp_fallback = true,

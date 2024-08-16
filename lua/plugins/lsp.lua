@@ -17,7 +17,7 @@ return {
 		"saadparwaiz1/cmp_luasnip",
 		"rafamadriz/friendly-snippets", -- useful snippets
 	},
-	event = "InsertEnter",
+	-- event = "InsertEnter",
 	config = function()
 		-- Change the Diagnostic symbols in the sign column (gutter)
 		local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
@@ -46,6 +46,22 @@ return {
 				function(server_name)
 					require("lspconfig")[server_name].setup({})
 				end,
+			},
+		})
+
+		require("mason-tool-installer").setup({
+			ensure_installed = {
+				"prettier",
+				"stylua",
+				"isort",
+				"black",
+				"flake8",
+				"eslint_d",
+				"html-lsp",
+				"htmlbeautifier",
+				"lua-language-server",
+				"omnisharp",
+				"pyright",
 			},
 		})
 
