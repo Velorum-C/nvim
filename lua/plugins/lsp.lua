@@ -39,7 +39,6 @@ return {
 		require("mason-lspconfig").setup({
 			ensure_installed = {
 				"lua_ls",
-				"pyright",
 			},
 			automatic_installation = true,
 			handlers = {
@@ -55,13 +54,13 @@ return {
 				"stylua",
 				"isort",
 				"black",
-				"flake8",
+				-- "flake8",
 				"eslint_d",
 				"html-lsp",
 				"htmlbeautifier",
 				"lua-language-server",
 				"omnisharp",
-				"pyright",
+				-- "pyright",
 			},
 		})
 
