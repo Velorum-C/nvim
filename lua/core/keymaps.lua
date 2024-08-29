@@ -28,8 +28,14 @@ wk.register({
 		"<cmd>bdelete!<CR>",
 		"Close window",
 	},
-	-- c used in comment.lua
-	-- d used in lsp.lua
+	c = {
+		-- comment.lua
+		"Comment line",
+	},
+	d = {
+		-- lsp.lua
+		"Delete",
+	},
 	e = {
 		-- NvimTree
 		"<cmd>NvimTreeToggle<CR>",
@@ -49,14 +55,12 @@ wk.register({
 		"Git",
 		opts,
 	},
-	-- j and k used in lsp.lua
 	l = {
 		-- Lazy
 		"<cmd>Lazy<CR>",
 		"Lazy plugin manager",
 		opts,
 	},
-	-- m used in lsp.lua
 	o = {
 		-- Format
 		"<cmd>lua require('conform').format({lsp_fallback = true, async = false, timeout_ms = 500})<CR>",
@@ -144,21 +148,3 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Insert blank space without insert mode
 keymap("n", "<Enter>", "o<ESC>", opts)
-
--- Delete until closed pair
-keymap("n", ")", "f(lct)", opts)
-keymap("n", "]", "f[lct]", opts)
-keymap("n", "}", "f{lct}", opts)
-keymap("n", "'", "f'lct'", opts)
-keymap("n", '"', 'f"lct"', opts)
-
--- Toggleterm
--- keymap("n", [[<C-\>]], "<cmd>ToggleTerm<CR>", opts)
-
---ChatGPT
---keymap("n", "<leader>gg", "<cmd>GpChatToggle popup<CR>", opts)
---keymap("n", "<leader>gr", "<cmd>GpChatRespond<CR>", opts)
---keymap("n", "<leader>gn", "<cmd>GpChatNew popup<CR>", opts)
---keymap("v", "<leader>gg", "<cmd>GpChatToggle popup<CR>", opts)
---keymap("v", "<leader>gr", "<cmd>GpChatRespond<CR>", opts)
---keymap("v", "<leader>gn", "<cmd>GpChatNew popup<CR>", opts)
