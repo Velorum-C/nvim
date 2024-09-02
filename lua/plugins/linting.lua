@@ -9,6 +9,17 @@ return {
 			python = { "flake8" },
 		}
 
+		lint.linters.flake8 = {
+			cmd = "flake8",
+			args = {
+				"--config",
+				"/home/met/.flake8",
+			},
+			stdin = false,
+			stream = "stderr",
+			ignore_exitcode = true,
+		}
+
 		local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
 
 		vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {

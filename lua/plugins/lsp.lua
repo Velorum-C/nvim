@@ -37,10 +37,6 @@ return {
 		})
 
 		require("mason-lspconfig").setup({
-			ensure_installed = {
-				"lua_ls",
-			},
-			automatic_installation = true,
 			handlers = {
 				function(server_name)
 					require("lspconfig")[server_name].setup({})
@@ -50,17 +46,23 @@ return {
 
 		require("mason-tool-installer").setup({
 			ensure_installed = {
+				-- LSPs
+				"pyright",
+				"lua-language-server",
+				"omnisharp",
+				"clangd",
+				"html-lsp",
+				-- Linters
+				"flake8",
+				"eslint_d",
+				"cpplint",
+				"mypy",
+				"pylint",
+				-- Formatters
 				"prettier",
 				"stylua",
 				"isort",
-				"black",
-				-- "flake8",
-				"eslint_d",
-				"html-lsp",
-				"htmlbeautifier",
-				"lua-language-server",
-				"omnisharp",
-				-- "pyright",
+				"autopep8",
 			},
 		})
 
@@ -168,9 +170,9 @@ return {
 				"msg",
 				fmt(
 					[[
-			k = "[+]"
-			i = "[i]"
-			e = "[-]"
+			OK  = "[+]"
+			LOG = "[*]"
+			ERR = "[-]"
 			]],
 					{}
 				)

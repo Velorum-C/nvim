@@ -16,6 +16,8 @@ vim.g.maplocalleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
+local isLspDiagnosticsVisible = true
+
 wk.register({
 	a = {
 		-- Ask about errors
@@ -54,6 +56,16 @@ wk.register({
 		"<cmd>Neogit kind=vsplit<CR>",
 		"Git",
 		opts,
+	},
+	h = {
+		function()
+			isLspDiagnosticsVisible = not isLspDiagnosticsVisible
+			vim.diagnostic.config({
+				virtual_text = isLspDiagnosticsVisible,
+				underline = isLspDiagnosticsVisible,
+			})
+		end,
+		"Toggle LSP Diagnostics",
 	},
 	l = {
 		-- Lazy
@@ -148,3 +160,14 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Insert blank space without insert mode
 keymap("n", "<Enter>", "o<ESC>", opts)
+
+-- Disable ESLint LSP server and hide virtual text in Neovim
+-- Add this to your init.lua or init.vim file
+local isLspDiagnosticsVisible = true
+vim.keymap.set("n", "<leader>lx", function()
+	isLspDiagnosticsVisible = not isLspDiagnosticsVisible
+	vim.diagnostic.config({
+		virtual_text = isLspDiagnosticsVisible,
+		underline = isLspDiagnosticsVisible,
+	})
+end)

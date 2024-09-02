@@ -9,14 +9,27 @@ return {
 				javascript = { "prettier" },
 				markdown = { "prettier" },
 				html = { "prettier" },
-				python = { "black" }, --, "isort" },
+				python = { "autopep8" },
 				lua = { "stylua" },
 			},
 			format_on_save = {
 				lsp_fallback = true,
 				async = false,
 				timeout_ms = 500,
+				lsp_format = true,
 			},
+			formatter_options = {
+				autopep8 = {
+					args = { "--max-line-length", "120" },
+				},
+			},
+		})
+
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			pattern = "*.py",
+			callback = function()
+				conform.format({ bufnr = vim.api.nvim_get_current_buf() })
+			end,
 		})
 	end,
 }
