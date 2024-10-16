@@ -3,7 +3,6 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		local conform = require("conform")
-
 		conform.setup({
 			formatters_by_ft = {
 				javascript = { "prettier" },
@@ -21,6 +20,9 @@ return {
 			formatter_options = {
 				autopep8 = {
 					args = { "--max-line-length", "120" },
+				},
+				stylua = {
+					args = { "--config-path", "~/.stylua.toml" },
 				},
 			},
 		})

@@ -1,10 +1,8 @@
-local wk = require("which-key")
 local opts = { noremap = true, silent = true }
 
--- Shorten function name
-local keymap = vim.api.nvim_set_keymap
---Remap space as leader key
+local keymap = vim.keymap.set
 keymap("", "<Space>", "<Nop>", opts)
+
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -16,107 +14,63 @@ vim.g.maplocalleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
-local isLspDiagnosticsVisible = true
+local wk = require("which-key")
+wk.add({
+	-- General
+	{ "<leader>a", "<cmd>lua vim.lsp.buf.hover()<CR>", desc = "Ask about errors" },
+	{ "<leader>b", "<cmd>bdelete!<CR>", desc = "Close window" },
+	{ "<leader>c", desc = "Comment line" },
+	{ "<leader>d", desc = "Delete" },
+	{ "<leader>e", "<cmd>NvimTreeToggle<CR>", desc = "Toggle file explorer" },
 
-wk.register({
-	a = {
-		-- Ask about errors
-		"<cmd>lua vim.lsp.buf.hover()<CR>",
-		"Ask about errors",
-		opts,
-	},
-	b = {
-		-- Closing windows
-		"<cmd>bdelete!<CR>",
-		"Close window",
-	},
-	c = {
-		-- comment.lua
-		"Comment line",
-	},
-	d = {
-		-- lsp.lua
-		"Delete",
-	},
-	e = {
-		-- NvimTree
-		"<cmd>NvimTreeToggle<CR>",
-		"Toggle file explorer",
-		opts,
-	},
-	f = {
-		-- Telescope
-		name = "Find",
-		f = { "<cmd>Telescope find_files<CR>", "File", opts },
-		g = { "<cmd>Telescope live_grep<CR>", "Grep", opts },
-		h = { "<cmd>Telescope git_files<CR>", "Git", opts },
-	},
-	g = {
-		-- Neogit
-		"<cmd>Neogit kind=vsplit<CR>",
-		"Git",
-		opts,
-	},
-	h = {
-		function()
-			isLspDiagnosticsVisible = not isLspDiagnosticsVisible
-			vim.diagnostic.config({
-				virtual_text = isLspDiagnosticsVisible,
-				underline = isLspDiagnosticsVisible,
-			})
-		end,
-		"Toggle LSP Diagnostics",
-	},
-	l = {
-		-- Lazy
-		"<cmd>Lazy<CR>",
-		"Lazy plugin manager",
-		opts,
-	},
-	o = {
-		-- Format
+	-- Find
+	{ "<leader>f", group = "Find" }, -- Unique groups for find
+	{ "<leader>ff", "<cmd>Telescope find_files<CR>", desc = "Find File" }, -- Unique keybinding
+	{ "<leader>fg", "<cmd>Telescope live_grep<CR>", desc = "Grep" },
+	{ "<leader>fh", "<cmd>Telescope git_files<CR>", desc = "Git" },
+
+	-- Git
+	{ "<leader>g", "<cmd>Neogit kind=vsplit<CR>", desc = "Git" },
+
+	-- LSP diagnostics
+	{ "<leader>h", "<function>", desc = "Toggle LSP Diagnostics" },
+
+	-- Lazy plugin manager
+	{ "<leader>l", "<cmd>Lazy<CR>", desc = "Lazy plugin manager" },
+
+	-- Format
+	{
+		"<leader>o",
 		"<cmd>lua require('conform').format({lsp_fallback = true, async = false, timeout_ms = 500})<CR>",
-		"Prettify",
-		opts,
+		desc = "Prettify",
 	},
-	q = {
-		-- Quit
-		"<cmd>q<CR>",
-		"Quit",
-		opts,
+
+	-- Save and Exit
+	{
+		mode = { "n", "v" },
+		{ "<leader>q", "<cmd>q<CR>", desc = "Quit" },
+		{ "<leader>w", "<cmd>w<CR>", desc = "Write" },
 	},
-	r = {
-		":%s/",
-		"Find and replace",
-		opts,
-	},
-	s = {
-		name = "Gitsigns",
-		s = { "<cmd>lua require('gitsigns').stage_hunk()<CR>", "Stage hunk", opts },
-		u = { "<cmd>lua require('gitsigns').undo_stage_hunk()<CR>", "Undo stage hunk", opts },
-		r = { "<cmd>lua require('gitsigns').reset_hunk()<CR>", "Reset hunk", opts },
-		p = { "<cmd>lua require('gitsigns').preview_hunk()<CR>", "Preview hunk", opts },
-		b = { "<cmd>lua require('gitsigns').blame_line()<CR>", "Blame line", opts },
-		d = { "<cmd>lua require('gitsigns').diffthis('~1')<CR>", "Diff this", opts },
-		n = { "<cmd>lua require('gitsigns').next_hunk()<CR>", "Next hunk", opts },
-	},
-	t = {
-		"<cmd>lua require('flash').jump()<CR>",
-		"Jump",
-		opts,
-	},
-	w = {
-		-- Write
-		"<cmd>w<CR>",
-		"Write",
-		opts,
-	},
-	x = {
-		"<cmd>!chmod +x %<CR>",
-		"Make executable",
-		silent = true,
-	},
-}, { prefix = "<leader>" })
+
+	-- Find and replace
+	{ "<leader>r", ":%s/", desc = "Find and replace" },
+
+	-- Gitsigns
+	{ "<leader>s", group = "Gitsigns" },
+	{ "<leader>sb", "<cmd>lua require('gitsigns').blame_line()<CR>", desc = "Blame line" },
+	{ "<leader>sd", "<cmd>lua require('gitsigns').diffthis('~1')<CR>", desc = "Diff this" },
+	{ "<leader>sn", "<cmd>lua require('gitsigns').next_hunk()<CR>", desc = "Next hunk" },
+	{ "<leader>sp", "<cmd>lua require('gitsigns').preview_hunk()<CR>", desc = "Preview hunk" },
+	{ "<leader>sr", "<cmd>lua require('gitsigns').reset_hunk()<CR>", desc = "Reset hunk" },
+	{ "<leader>ss", "<cmd>lua require('gitsigns').stage_hunk()<CR>", desc = "Stage hunk" },
+	{ "<leader>su", "<cmd>lua require('gitsigns').undo_stage_hunk()<CR>", desc = "Undo stage hunk" },
+
+	-- Jump
+	{ "<leader>t", "<cmd>lua require('flash').jump()<CR>", desc = "Jump" },
+
+	-- System commands
+	{ "<leader>x", "<cmd>!chmod +x %<CR>", desc = "Make executable" },
+})
 
 -- Block splitting
 keymap("n", ".", "<cmd> TSJToggle <CR>", opts)
@@ -125,7 +79,7 @@ keymap("n", ".", "<cmd> TSJToggle <CR>", opts)
 keymap("i", "jk", "<ESC>", opts)
 keymap("i", "kj", "<ESC>", opts)
 keymap("v", "jk", "<ESC>", opts)
-keymap("v", "jk", "<ESC>", opts)
+keymap("v", "kj", "<ESC>", opts)
 
 -- Tab
 keymap("v", "<", "<gv", opts)
@@ -161,8 +115,7 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 -- Insert blank space without insert mode
 keymap("n", "<Enter>", "o<ESC>", opts)
 
--- Disable ESLint LSP server and hide virtual text in Neovim
--- Add this to your init.lua or init.vim file
+-- Toggle LSP diagnostics
 local isLspDiagnosticsVisible = true
 vim.keymap.set("n", "<leader>lx", function()
 	isLspDiagnosticsVisible = not isLspDiagnosticsVisible

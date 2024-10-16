@@ -1,5 +1,4 @@
 return {
-
 	"neovim/nvim-lspconfig",
 	dependencies = {
 		-- mason
@@ -71,12 +70,10 @@ return {
 
 		require("lspconfig")["html"].setup({
 			capabilities = capabilities,
-			-- on_attach = on_attach,
 		})
 
 		require("lspconfig")["pyright"].setup({
 			capabilities = capabilities,
-			-- on_attach = on_attach,
 		})
 
 		require("lspconfig")["omnisharp"].setup({
@@ -85,12 +82,10 @@ return {
 				"--languageserver",
 			},
 			capabilities = capabilities,
-			-- on_attach = on_attach,
 		})
 
 		require("lspconfig")["lua_ls"].setup({
 			capabilities = capabilities,
-			-- on_attach = on_attach,
 			settings = { -- custom settings for lua
 				Lua = {
 					-- make the language server recognize "vim" global
@@ -102,6 +97,12 @@ return {
 						library = {
 							[vim.fn.expand("$VIMRUNTIME/lua")] = true,
 							[vim.fn.stdpath("config") .. "/lua"] = true,
+						},
+					},
+					format = {
+						enable = true,
+						defaultConfig = {
+							column_width = "120",
 						},
 					},
 				},
